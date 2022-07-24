@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="todoObject"
+            type="com.betulantep.todolistappbootcamp.data.entity.ToDo" />
+        <variable
+            name="detailToolbar"
+            type="Integer" />
+        <variable
+            name="detailFragment"
+            type="com.betulantep.todolistappbootcamp.ui.fragment.DetailToWorkToDoFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.DetailToWorkToDoFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarUpdate"
+            app:title="@{detailToolbar}"
+            app:titleTextColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="32dp"
+            android:textColorHint="@color/gray_hint"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarUpdate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_editText"
+                android:fontFamily="@font/kalam"
+                android:hint="@string/workToDo"
+                android:maxLines="10"
+                android:minHeight="100dp"
+                android:text="@{todoObject.todo_work}"
+                android:textColor="@color/black_text"
+                android:textColorLink="@color/primaryDark" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{()->detailFragment.updateTodo(todoObject.todo_id,editTextUpdate.getText().toString())}"
+            android:text="@string/update"
+            app:icon="@drawable/ic_update"
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

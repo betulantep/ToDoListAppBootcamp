@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+
+    <string name="toDoList">ToDo List</string>
+    <string name="addWorkToDo">Add Work ToDo</string>
+    <string name="detailToWorkToDo">Detail To Work ToDo</string>
+    <string name="search_todo">Search ToDo</string>
+    <string name="workToDo">Work ToDo</string>
+    <string name="update">UPDATE</string>
+    <string name="add">ADD</string>
+    <string name="areYouSureToDelete">Are you sure to delete?</string>
+    <string name="yes">YES</string>
+    <string name="emptyList">No ToDo</string>
+</resources>

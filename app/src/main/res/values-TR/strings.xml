@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+
+    <string name="toDoList">Yapılacak İşler</string>
+    <string name="addWorkToDo">Yapılacak İş Kayıt</string>
+    <string name="detailToWorkToDo">Yapılacak İş Detay</string>
+    <string name="search_todo">Yapılacak İş Ara</string>
+    <string name="workToDo">Yapılacak İş</string>
+    <string name="update">Güncelle</string>
+    <string name="add">Kayıt</string>
+    <string name="areYouSureToDelete">Silmek istediğinize emin misiniz?</string>
+    <string name="yes">EVET</string>
+    <string name="emptyList">Yapılacak İş Yok</string>
+</resources>
