@@ -20,3 +20,7 @@ Project Features
  - Night Mode <br>
  - English Language Support <br>
  </h3><br>
+
+<p align="left">
+<img align="left" src="https://github.com/betulantep/ToDoListAppBootcamp/blob/master/ScreenShots/ToDoListPanoramic.png" width="1080" />
+</p>
