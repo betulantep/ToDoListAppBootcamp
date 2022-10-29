@@ -34,13 +34,15 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="60dp"
             android:textColorHint="@color/gray_hint"
             app:boxCornerRadiusTopEnd="20dp"
             app:boxCornerRadiusTopStart="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,12 +51,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextAdd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:backgroundTint="@color/background_editText"
                 android:fontFamily="@font/kalam"
+                android:gravity="start|top"
                 android:hint="@string/workToDo"
-                android:maxLines="10"
-                android:minHeight="100dp"
+                android:maxLines="50"
+                android:paddingTop="32dp"
                 android:textColor="@color/black_text"
                 android:textColorHint="@color/gray_hint"
                 android:textColorLink="@color/primaryDark" />
@@ -65,16 +68,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="100dp"
             android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
             android:onClick="@{()-> addFragment.addTodo(editTextAdd.getText().toString())}"
             android:text="@string/add"
             app:icon="@drawable/ic_add"
             app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

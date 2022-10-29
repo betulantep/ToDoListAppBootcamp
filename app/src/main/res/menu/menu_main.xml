@@ -8,4 +8,9 @@
         android:title="@string/search_todo"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always|collapseActionView" />
+    <item
+        android:id="@+id/actionSwap"
+        android:icon="@drawable/ic_swap_24"
+        android:title="Swap"
+        app:showAsAction="always" />
 </menu>

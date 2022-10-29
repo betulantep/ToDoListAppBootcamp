@@ -20,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ToDoListFragment : Fragment(),SearchView.OnQueryTextListener{
     private lateinit var binding: FragmentToDoListBinding
     private lateinit var viewModel : ToDoListViewModel
+    private var isSwap = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +34,9 @@ class ToDoListFragment : Fragment(),SearchView.OnQueryTextListener{
         viewModel.todolist.observe(viewLifecycleOwner){
             binding.todoAdapter = ToDoAdapter(it,viewModel)
             emptyListControl(it)
+        }
+        viewModel.isSwap.observe(viewLifecycleOwner){
+            isSwap = it
         }
         return binding.root
     }
@@ -52,6 +56,14 @@ class ToDoListFragment : Fragment(),SearchView.OnQueryTextListener{
     }
     fun fabClick(view: View) {
         Navigation.actionFragment(view,R.id.action_toDoListFragment_to_addWorkToDoFragment)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.actionSwap){
+            viewModel.isSwap.value = !isSwap
+            viewModel.todosLoad()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

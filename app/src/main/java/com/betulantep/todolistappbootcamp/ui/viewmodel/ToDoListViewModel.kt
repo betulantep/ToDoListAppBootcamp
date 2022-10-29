@@ -5,17 +5,20 @@ import androidx.lifecycle.ViewModel
 import com.betulantep.todolistappbootcamp.data.entity.ToDo
 import com.betulantep.todolistappbootcamp.data.repo.ToDoDaoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class ToDoListViewModel @Inject constructor(var repoTodo: ToDoDaoRepository) : ViewModel() {
     var todolist : MutableLiveData<List<ToDo>> = MutableLiveData()
+    var isSwap : MutableLiveData<Boolean> = MutableLiveData()
     init {
-       todosLoad()
+        getIsSwap()
+        todosLoad()
        todolist = repoTodo.getTodosRepo()
+    }
+
+    fun getIsSwap(){
+        isSwap = repoTodo.getIsSwap()
     }
 
     fun todosLoad(){
